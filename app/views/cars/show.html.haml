@@ -1,13 +1,22 @@
 %p#notice= notice
+%h1= @car.name
+%p= @car.description
 %p
-  %strong Name:
-  = @car.name
-%p
-  %strong Description:
-  = @car.description
-%p
-  %strong Kind:
+  %strong Class:
   = @car.kind
+
+%h2 Rentals
+%table
+  %th Starts on
+  %th Ends on
+  - @rentals.each do |rental|
+    %tr
+      %td= rental.starts_on
+      %td= rental.ends_on
+
+
+= link_to 'Rent this car', new_car_rental_path(@car)
+|
 = link_to 'Edit', edit_car_path(@car)
 |
 = link_to 'Back', cars_path
