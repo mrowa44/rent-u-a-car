@@ -14,4 +14,10 @@ class Car < ActiveRecord::Base
       50
     end
   end
+
+  def total_income
+    total = 0
+    rentals.each.map { |r| total += r.sum_price }
+    total
+  end
 end
