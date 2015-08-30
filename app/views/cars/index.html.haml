@@ -4,12 +4,16 @@
     %tr
       %th Name
       %th Class
+      %th Price/day
       %th{:colspan => "3"}
   %tbody
     - @cars.each do |car|
       %tr
-        %td= car.name
+        %td= link_to car.name, car
         %td= car.kind
+        %td
+          = car.price
+          zł
         %td= link_to 'Rent', new_car_rental_path(car), class: 'btn btn-success'
         %td
           = link_to 'Show', car, class: 'btn btn-default'

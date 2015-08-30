@@ -2,6 +2,10 @@
 %p
   %strong Class:
   = @car.kind
+%p
+  %strong Price/day:
+  = @car.price
+  zł
 %p= @car.description
 
 %h3.text-center Rentals
@@ -9,11 +13,15 @@
   %th Starts on
   %th Ends on
   %th User email
+  %th Price
   - @rentals.each do |rental|
     %tr
       %td= rental.starts_on
       %td= rental.ends_on
       %td= mail_to rental.user.email
+      %td
+        = rental.sum_price
+        zł
 
 
 .pull-right

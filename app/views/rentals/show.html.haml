@@ -7,5 +7,10 @@
 %p
   %strong Ends on:
   = @rental.ends_on
+%p
+  %strong Total price:
+  = @rental.sum_price
+  zł
+
 = link_to 'Edit', edit_car_rental_path(@rental.car, @rental), class: 'btn btn-info'
 = link_to 'Back', car_path(@rental.car), class: 'btn btn-default'
