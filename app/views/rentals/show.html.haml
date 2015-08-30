@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %strong Starts on:
+  = @rental.starts_on
+%p
+  %strong Ends on:
+  = @rental.ends_on
+%p
+  %strong Car:
+  = @rental.car.name
+= link_to 'Edit', edit_car_rental_path(@rental.car, @rental)
+|
+= link_to 'Back', car_rentals_path

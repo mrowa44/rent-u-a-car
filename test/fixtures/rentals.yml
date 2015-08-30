@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  starts_on: 2015-08-30
+  ends_on: 2015-08-30
+  car: 
+
+two:
+  starts_on: 2015-08-30
+  ends_on: 2015-08-30
+  car: 

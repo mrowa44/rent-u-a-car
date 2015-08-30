@@ -1,0 +1,5 @@
+%h1 Editing Rental
+= render 'form'
+= link_to 'Show', car_rental_path(@rental.car, @rental)
+|
+= link_to 'Back', car_rentals_path(@rental.car)

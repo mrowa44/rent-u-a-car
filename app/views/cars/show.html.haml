@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @car.name
+%p
+  %strong Description:
+  = @car.description
+%p
+  %strong Kind:
+  = @car.kind
+= link_to 'Edit', edit_car_path(@car)
+|
+= link_to 'Back', cars_path
