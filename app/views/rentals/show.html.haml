@@ -1,13 +1,12 @@
 %p#notice= notice
+%h1.text-center
+  = @rental.car.name
+  rental
 %p
   %strong Starts on:
   = @rental.starts_on
 %p
   %strong Ends on:
   = @rental.ends_on
-%p
-  %strong Car:
-  = @rental.car.name
-= link_to 'Edit', edit_car_rental_path(@rental.car, @rental)
-|
-= link_to 'Back', car_path(@rental.car)
+= link_to 'Edit', edit_car_rental_path(@rental.car, @rental), class: 'btn btn-info'
+= link_to 'Back', car_path(@rental.car), class: 'btn btn-default'

@@ -1,3 +1,3 @@
-%h1 New Rental
+%h1.text-center New Rental
 = render 'form'
-= link_to 'Back', car_path(@rental.car)
+= link_to 'Back', car_path(@rental.car), class: 'btn btn-default'

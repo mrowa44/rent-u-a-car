@@ -18,6 +18,11 @@
   .field
     = f.label :kind
     %br/
-    = f.text_field :kind
+    = f.label 'A'
+    = f.radio_button :kind, 'A', checked: true
+    = f.label 'B'
+    = f.radio_button :kind, 'B'
+    = f.label 'C'
+    = f.radio_button :kind, 'C'
   .actions
-    = f.submit
+    = f.submit nil, class: 'btn btn-success'

@@ -1,12 +1,12 @@
 %p#notice= notice
-%h1= @car.name
-%p= @car.description
+%h1.text-center= @car.name
 %p
   %strong Class:
   = @car.kind
+%p= @car.description
 
-%h2 Rentals
-%table
+%h3.text-center Rentals
+%table.table.table-striped
   %th Starts on
   %th Ends on
   - @rentals.each do |rental|
@@ -15,8 +15,7 @@
       %td= rental.ends_on
 
 
-= link_to 'Rent this car', new_car_rental_path(@car)
-|
-= link_to 'Edit', edit_car_path(@car)
-|
-= link_to 'Back', cars_path
+.pull-right
+  = link_to 'Back', cars_path, class: 'btn btn-default'
+  = link_to 'Edit', edit_car_path(@car), class: 'btn btn-info'
+  = link_to 'Rent this car', new_car_rental_path(@car), class: 'btn btn-success'
