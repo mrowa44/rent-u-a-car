@@ -9,6 +9,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'haml'
 gem 'validates_overlap'
 gem 'bootstrap-sass'
+gem 'bootstrap_form'
 
 gem 'jquery-rails'
 gem 'turbolinks'

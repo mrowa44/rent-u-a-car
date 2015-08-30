@@ -1,4 +1,4 @@
-= form_for([@car, @rental]) do |f|
+= bootstrap_form_for([@car, @rental]) do |f|
   - if @rental.errors.any?
     #error_explanation
       %h2
@@ -8,12 +8,8 @@
         - @rental.errors.full_messages.each do |message|
           %li= message
   .field
-    = f.label :starts_on
-    %br/
     = f.date_select :starts_on
   .field
-    = f.label :ends_on
-    %br/
     = f.date_select :ends_on
   .actions
     = f.submit nil, class: 'btn btn-success'

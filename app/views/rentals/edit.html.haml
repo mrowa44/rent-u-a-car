@@ -1,4 +1,8 @@
-%h1.text-center Editing Rental
+%h1.text-center
+  Editing Rental:
+  = @rental.car.name
+
 = render 'form'
-= link_to 'Show', car_path(@rental.car), class: 'btn btn-info'
-= link_to 'Back', car_path(@rental.car), class: 'btn btn-default'
+.pull-right
+  = link_to 'Show', car_path(@rental.car), class: 'btn btn-info'
+  = link_to 'Back', car_path(@rental.car), class: 'btn btn-default'
