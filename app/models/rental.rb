@@ -1,5 +1,6 @@
 class Rental < ActiveRecord::Base
   belongs_to :car
+  belongs_to :user
 
   validates :starts_on, presence: true
   validates :ends_on, presence: true

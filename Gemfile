@@ -10,6 +10,7 @@ gem 'haml'
 gem 'validates_overlap'
 gem 'bootstrap-sass'
 gem 'bootstrap_form'
+gem 'devise'
 
 gem 'jquery-rails'
 gem 'turbolinks'
