@@ -6,14 +6,14 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-  %body.col-md-6.col-md-offset-3
+  %body
     %header.navbar.navbar-default
       .navbar-header
         = link_to 'rent u a car', root_path, class: 'navbar-brand'
       .navbar-collapse.collapse
         %ul.navbar-right.navbar-nav.nav
           - if user_signed_in?
-            %li= link_to 'Log out', destroy_user_session_path, class: 'btn btn-danger', method: :delete
+            %li= link_to 'Log out', destroy_user_session_path, class: 'btn btn-info', method: :delete
           - else
             %li= link_to 'Log in', new_user_session_path, class: 'btn btn-default'
             %li= link_to 'Sign up', new_user_registration_path, class: 'btn btn-success'
@@ -21,3 +21,6 @@
     .container-fluid
       = render 'layouts/flash_messages'
       = yield
+
+    %footer.footer.panel-footer
+      %a{ href: 'http://jrachowi.cz/' } Justyna Rachowicz
