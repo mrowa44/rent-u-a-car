@@ -10,6 +10,13 @@
     %header.navbar.navbar-default
       .navbar-header
         = link_to 'rent u a car', root_path, class: 'navbar-brand'
+      .navbar-collapse.collapse
+        %ul.navbar-right.navbar-nav.nav
+          - if user_signed_in?
+            %li= link_to 'Log out', destroy_user_session_path, class: 'btn btn-danger', method: :delete
+          - else
+            %li= link_to 'Log in', new_user_session_path, class: 'btn btn-default'
+            %li= link_to 'Sign up', new_user_registration_path, class: 'btn btn-success'
 
     = render 'layouts/flash_messages'
     = yield

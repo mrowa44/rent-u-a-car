@@ -8,13 +8,16 @@
 %table.table.table-striped
   %th Starts on
   %th Ends on
+  %th User email
   - @rentals.each do |rental|
     %tr
       %td= rental.starts_on
       %td= rental.ends_on
+      %td= mail_to rental.user.email
 
 
 .pull-right
   = link_to 'Back', cars_path, class: 'btn btn-default'
-  = link_to 'Edit', edit_car_path(@car), class: 'btn btn-info'
+  - if user_signed_in?
+    = link_to 'Edit', edit_car_path(@car), class: 'btn btn-info'
   = link_to 'Rent this car', new_car_rental_path(@car), class: 'btn btn-success'

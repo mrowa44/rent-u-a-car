@@ -1,6 +1,7 @@
 class RentalsController < ApplicationController
   before_action :set_rental, only: [:show, :edit, :update, :destroy]
   before_action :set_car
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @rentals = Rental.all
@@ -18,6 +19,7 @@ class RentalsController < ApplicationController
 
   def create
     @rental = @car.rentals.new(rental_params)
+    @rental.user = current_user
 
     respond_to do |format|
       if @rental.save

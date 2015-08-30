@@ -13,7 +13,8 @@
         %td= rental.ends_on
         %td= rental.car.name
         %td= link_to 'Show', car_rental_path(rental.car, rental)
-        %td= link_to 'Edit', edit_car_rental_path(rental.car, rental)
-        %td= link_to 'Destroy', car_rental_path(rental.car, rental), method: :delete, data: { confirm: 'Are you sure?' }
+        - if user_signed_in?
+          %td= link_to 'Edit', edit_car_rental_path(rental.car, rental)
+          %td= link_to 'Destroy', car_rental_path(rental.car, rental), method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 = link_to 'New Rental', new_car_rental_path

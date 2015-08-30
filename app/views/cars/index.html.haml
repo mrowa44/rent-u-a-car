@@ -13,6 +13,8 @@
         %td= link_to 'Rent', new_car_rental_path(car), class: 'btn btn-success'
         %td
           = link_to 'Show', car, class: 'btn btn-default'
-          = link_to 'Edit', edit_car_path(car), class: 'btn btn-info'
-          = link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'
-= link_to 'New Car', new_car_path, class: 'btn btn-success pull-right'
+          - if user_signed_in?
+            = link_to 'Edit', edit_car_path(car), class: 'btn btn-info'
+            = link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'
+- if user_signed_in?
+  = link_to 'New Car', new_car_path, class: 'btn btn-success pull-right'
