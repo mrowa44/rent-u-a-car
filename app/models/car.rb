@@ -17,7 +17,7 @@ class Car < ActiveRecord::Base
 
   def total_income
     total = 0
-    rentals.each.map { |r| total += r.sum_price }
+    rentals.each { |r| total += r.sum_price }
     total
   end
 end
